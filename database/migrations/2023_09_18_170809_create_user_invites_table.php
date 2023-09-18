@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invited_users', function (Blueprint $table) {
+        Schema::create('user_invites', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('email');
             $table->boolean('accepted')->default(false);
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invited_users');
+        Schema::dropIfExists('user_invites');
     }
 };
