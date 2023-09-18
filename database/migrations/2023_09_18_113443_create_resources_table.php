@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('url');
             $table->string('description');
             $table->json('use_cases');
+            $table->uuid('user_id')
+                ->references('id')
+                ->on('users');
             $table->uuid('folder_id')
                 ->nullable()
                 ->references('id')
