@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Domain\Tag;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Folder extends Model
+class Tag extends Model
 {
     use HasFactory, HasUuids;
 }
