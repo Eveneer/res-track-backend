@@ -18,13 +18,15 @@ class GetResourceComments
     {
         return [
             'resource_id' => ['required', 'exists:resources,id'],
-            'page' => ['sometimes', 'integer', 'min:1']
+            'page' => ['sometimes', 'integer', 'min:1'],
+            'per_page' => ['sometimes', 'integer', 'min:1']
         ];
     }
 
     public function handle(array $data): LengthAwarePaginator
     {
-        return Comment::whereResourceId($data['resource_id'])->paginate(5, ['*'], $data['page'] ?? 1);
+        return Comment::whereResourceId($data['resource_id'])
+            ->paginate($data['per_page'] ?? 5, ['*'], $data['page'] ?? 1);
     }
 
     public function asController(ActionRequest $request): LengthAwarePaginator
