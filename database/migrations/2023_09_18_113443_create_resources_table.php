@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('resources', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('url');
+            $table->string('name');
+            $table->text('url')->nullable();
             $table->string('description');
             $table->json('use_cases');
             $table->uuid('user_id')
