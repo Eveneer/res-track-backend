@@ -53,7 +53,7 @@ class UpdateResource
     public function jsonResponse(Resource $resource): array
     {
         return [
-            'message' => 'Resource created',
+            'message' => 'Resource updated',
             'data' => [
                 'resource' => $resource
             ]
