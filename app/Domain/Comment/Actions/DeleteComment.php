@@ -51,7 +51,8 @@ class DeleteComment
         return [
             'message' => $message,
             'data' => [
-                'comment' => $message
+                'message' => $message,
+                'is_deleted' => $is_deleted
             ]
         ];
     }
