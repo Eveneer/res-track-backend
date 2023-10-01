@@ -26,11 +26,11 @@ class DeleteFolder
         $flag = true;
 
         foreach ($folder->resources()->get() as $resource) {
-            $flag = $flag && DeleteResource::run(['resource_id' => $resource->id])['data']['is_deleted'];
+            $flag = $flag && DeleteResource::run(['resource_id' => $resource->id]);
         }
 
         foreach ($folder->subFolders()->get() as $sub_folder) {
-            $flag = $flag && DeleteFolder::run(['id' => $sub_folder->id])['data']['is_deleted'];
+            $flag = $flag && DeleteFolder::run(['id' => $sub_folder->id]);
         }
 
         if ($flag) {
